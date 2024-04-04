@@ -9,13 +9,24 @@ class Simulation:
         self.num_time_steps = num_time_steps
         self.probability_dist = probability_dist
         self.buy_prob = buy_prob
-        self.agents = [am.Agent(initial_wealth).allot_goods() for i in range(num_agents)]
-    
+        self.agents = [am.Agent(initial_wealth) for _ in range(num_agents)]
+
     def update_agents(self):
-        return
-    
+        random_indices = random.sample(range(self.num_agents), 2)
+        agent1, agent2 = self.agents[random_indices[0]], self.agents[random_indices[1]]
+
+        if random.random() < self.buy_prob:
+            if agent1.money >= agent2.price_of_product:
+                agent1.buy_goods(agent2, 1, agent2.price_of_product)
+                agent1.money -= agent2.price_of_product
+                agent2.money += agent2.price_of_product
+
+                # Randomly adjust the number of goods and price
+                agent2.no_of_product += random.randint(-1, 1)
+                agent2.price_of_product += random.uniform(-10, 10)
+
     def run_simulation(self):
-        for i in range(self.num_time_steps):
+        for _ in range(self.num_time_steps):
             self.update_agents()
 
     def print_stats(self):
