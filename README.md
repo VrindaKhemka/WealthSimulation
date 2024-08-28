@@ -4,6 +4,7 @@
 
 This project simulates three distinct economic models to analyze wealth distribution, using Agent Based Simulation Modelling. The goal is to understand the impact of these factors on wealth inequality and to develop a modified tax model aimed at achieving a more equitable distribution of wealth in India.
 
+
 ## Key Objectives
 
 - **Simulation of Economic Models:** Developed three different models with varying assumptions:
@@ -18,10 +19,6 @@ This project simulates three distinct economic models to analyze wealth distribu
 
 - **Developing a Modified Tax Model:** Currently focused on creating a new tax model tailored to promote a more equitable distribution of wealth in India.
 
-
-## Results
-
-The results of the simulations, including the comparison of different economic models using the Gini Index, Coefficient of Variation, and Palma ratio, can be found in the `results/` directory.
 
 ## Future Work
 
